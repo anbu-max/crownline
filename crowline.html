@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CROWNLINE CONSTRUCTION | Underpinning • Waterproofing • Demolition • Toronto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black:   #080808;
+      --dark:    #111111;
+      --card:    #181818;
+      --border:  #252525;
+      --gold:    #C9952A;
+      --gold2:   #E8B84B;
+      --white:   #FAFAFA;
+      --muted:   #888;
+      --light:   #D4D4D4;
+      --nav-h:   72px;
+      --ease:    cubic-bezier(.25,.46,.45,.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    ul { list-style: none; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .section-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,149,42,.1); border: 1px solid rgba(201,149,42,.28);
+      color: var(--gold); font-family: 'Rajdhani', sans-serif;
+      font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 2px; margin-bottom: 14px;
+    }
+    .section-badge svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1; letter-spacing: .02em; color: var(--white); }
+    .section-title span { color: var(--gold); }
+    .section-sub { font-size: .97rem; color: var(--muted); line-height: 1.75; max-width: 540px; margin-top: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .92rem; letter-spacing: .08em; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; transition: all .3s var(--ease); }
+    .btn-gold { background: var(--gold); color: var(--black); }
+    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,149,42,.35); }
+    .btn-outline { border: 1.5px solid rgba(255,255,255,.28); color: var(--white); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left { opacity: 0; transform: translateX(-38px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(38px); transition: opacity .75s var(--ease), transform .75s var(--ease); }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* ── NAV ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; transition: background .4s, border-color .4s; border-bottom: 1px solid transparent; }
+    .nav.scrolled { background: rgba(8,8,8,.96); backdrop-filter: blur(20px); border-color: var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: .06em; }
+    .logo-icon { width: 40px; height: 40px; background: var(--gold); display: flex; align-items: center; justify-content: center; border-radius: 2px; flex-shrink: 0; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--black); letter-spacing: 0; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--light); position: relative; transition: color .25s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-cta { margin-left: 14px; padding: 10px 22px !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; width: 30px; cursor: pointer; }
+    .hamburger span { display: block; height: 2px; background: var(--white); transition: all .35s; border-radius: 1px; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 999; background: var(--black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; opacity: 0; pointer-events: none; transition: opacity .35s; }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; letter-spacing: .08em; color: var(--white); transition: color .2s; }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; padding-top: calc(var(--nav-h) + 80px); }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.3s ease; }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(8,8,8,.25) 0%, rgba(8,8,8,.5) 50%, rgba(8,8,8,.96) 100%); }
+    .hero-content { position: relative; z-index: 2; padding: 0 0 72px; margin-top: auto; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 12px; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .hero-eyebrow .line { width: 38px; height: 1.5px; background: var(--gold); }
+    .hero-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.8rem, 11vw, 9rem); line-height: .91; letter-spacing: .02em; color: var(--white); margin-bottom: 22px; }
+    .hero-heading .accent { color: var(--gold); display: block; }
+    .hero-desc { font-size: 1.05rem; color: var(--light); line-height: 1.75; max-width: 500px; margin-bottom: 34px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 56px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px; }
+    .hero-stat { padding: 0 24px; border-right: 1px solid rgba(255,255,255,.1); }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--gold); line-height: 1; letter-spacing: .02em; }
+    .hero-stat-label { font-family: 'Rajdhani', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .slide-dots { position: absolute; right: 28px; top: 50%; transform: translateY(-50%); z-index: 3; display: flex; flex-direction: column; gap: 8px; }
+    .slide-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.3); cursor: pointer; transition: all .3s; border: none; }
+    .slide-dot.active { background: var(--gold); transform: scale(1.5); }
+    .scroll-indicator { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: 'Rajdhani', sans-serif; font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+    .scroll-arrow { width: 1px; height: 38px; background: rgba(255,255,255,.18); position: relative; overflow: hidden; }
+    .scroll-arrow::after { content: ''; position: absolute; top: -100%; width: 100%; height: 100%; background: var(--gold); animation: scrollDown 1.8s infinite; }
+    @keyframes scrollDown { to { top: 200%; } }
+
+    /* ── SERVICES ── */
+    .services { padding: 100px 0; background: var(--dark); }
+    .services-head { text-align: center; margin-bottom: 56px; }
+    .services-head .section-sub { margin: 12px auto 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .service-card { background: var(--card); padding: 38px 30px; position: relative; overflow: hidden; transition: background .3s; }
+    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--gold); transition: width .5s var(--ease); }
+    .service-card:hover { background: #1c1c1c; }
+    .service-card:hover::before { width: 100%; }
+    .service-icon { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: rgba(201,149,42,.1); border: 1px solid rgba(201,149,42,.2); border-radius: 4px; margin-bottom: 22px; }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.6; }
+    .service-card h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: .05em; text-transform: uppercase; color: var(--white); margin-bottom: 11px; }
+    .service-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+    .service-num { position: absolute; top: 20px; right: 24px; font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: rgba(255,255,255,.04); }
+
+    /* ── ABOUT ── */
+    .about { padding: 100px 0; background: var(--black); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; }
+    .about-badge { position: absolute; bottom: -20px; right: -20px; background: var(--gold); color: var(--black); padding: 24px 28px; border-radius: 2px; text-align: center; }
+    .about-badge .num { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; line-height: 1; }
+    .about-badge .txt { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+    .about-accent { position: absolute; top: 20px; left: -20px; width: 90px; height: 4px; background: var(--gold); }
+    .about-text { display: flex; flex-direction: column; gap: 18px; }
+    .about-text p { font-size: .96rem; color: var(--muted); line-height: 1.8; }
+    .about-vals { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+    .about-val { display: flex; align-items: flex-start; gap: 11px; padding: 15px; border: 1px solid var(--border); border-radius: 2px; background: var(--card); }
+    .about-val svg { width: 17px; height: 17px; stroke: var(--gold); fill: none; stroke-width: 1.8; flex-shrink: 0; margin-top: 2px; }
+    .about-val h4 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .88rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+    .about-val p { font-size: .78rem; color: var(--muted); line-height: 1.5; margin: 0; }
+
+    /* ── PROJECTS ── */
+    .projects { padding: 100px 0; background: var(--dark); }
+    .projects-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; flex-wrap: wrap; gap: 16px; }
+    .projects-filter { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; padding: 8px 18px; border: 1.5px solid var(--border); border-radius: 2px; color: var(--muted); transition: all .25s; background: none; }
+    .filter-btn.active, .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .project-card { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+    .project-card:hover img { transform: scale(1.07); }
+    .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,.92) 0%, transparent 55%); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; opacity: 0; transition: opacity .4s; }
+    .project-card:hover .project-overlay { opacity: 1; }
+    .project-overlay h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; }
+    .project-overlay span { font-size: .78rem; color: var(--gold); font-family: 'Rajdhani', sans-serif; }
+    .project-card.large { grid-column: span 2; }
+
+    /* ── WHY US ── */
+    .whyus { padding: 100px 0; background: var(--black); }
+    .whyus-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .whyus-right { display: flex; flex-direction: column; gap: 16px; }
+    .why-item { display: flex; gap: 18px; padding: 22px; border: 1px solid var(--border); border-radius: 2px; background: var(--card); transition: border-color .3s, background .3s; }
+    .why-item:hover { border-color: rgba(201,149,42,.38); background: #1b1b1b; }
+    .why-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); line-height: 1; flex-shrink: 0; width: 36px; }
+    .why-body h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 7px; }
+    .why-body p { font-size: .86rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { padding: 100px 0; background: var(--dark); }
+    .testimonials-head { text-align: center; margin-bottom: 52px; }
+    .testimonials-head .section-sub { margin: 12px auto 0; }
+    .testi-slider { overflow: hidden; }
+    .testi-track { display: flex; transition: transform .5s var(--ease); }
+    .testi-card { min-width: 100%; padding: 40px; border: 1px solid var(--border); border-radius: 2px; background: var(--card); }
+    .testi-quote { font-size: 3rem; color: var(--gold); line-height: 1; margin-bottom: 16px; font-family: Georgia, serif; }
+    .testi-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 3px; }
+    .testi-text { font-size: 1rem; color: var(--light); line-height: 1.8; font-style: italic; margin-bottom: 28px; }
+    .testi-text strong { font-style: normal; color: var(--white); font-weight: 600; }
+    .testi-author { display: flex; align-items: center; gap: 13px; border-top: 1px solid var(--border); padding-top: 22px; }
+    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--black); flex-shrink: 0; }
+    .testi-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .92rem; letter-spacing: .06em; text-transform: uppercase; }
+    .testi-role { font-size: .78rem; color: var(--muted); margin-top: 2px; }
+    .testi-nav { display: flex; gap: 9px; margin-top: 20px; justify-content: center; }
+    .testi-nav button { width: 38px; height: 38px; border: 1.5px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--white); transition: all .25s; }
+    .testi-nav button:hover { border-color: var(--gold); color: var(--gold); }
+    .testi-nav button svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── PROCESS ── */
+    .process { padding: 80px 0; background: var(--dark); border-top: 1px solid var(--border); }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; }
+    .process-step { padding: 28px 24px; position: relative; }
+    .process-step:not(:last-child)::after { content: ''; position: absolute; top: 36px; right: 0; width: 1px; height: 56px; background: var(--border); }
+    .process-step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; color: rgba(201,149,42,.13); line-height: 1; margin-bottom: 14px; }
+    .process-step h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .92rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 9px; }
+    .process-step p { font-size: .84rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── COVERAGE BANNER ── */
+    .coverage { padding: 60px 0; background: var(--gold); }
+    .coverage-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .coverage-text h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--black); letter-spacing: .03em; line-height: 1; }
+    .coverage-text p { font-size: .95rem; color: rgba(0,0,0,.65); margin-top: 8px; font-weight: 500; }
+    .coverage-areas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .coverage-area { background: rgba(0,0,0,.12); padding: 8px 18px; border-radius: 2px; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--black); }
+
+    /* ── CONTACT ── */
+    .contact { padding: 100px 0; background: var(--dark); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact-form { display: flex; flex-direction: column; gap: 15px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .form-field { display: flex; flex-direction: column; gap: 5px; }
+    .form-field label { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .form-field input, .form-field select, .form-field textarea { background: var(--card); border: 1px solid var(--border); border-radius: 2px; color: var(--white); font-family: 'Barlow', sans-serif; font-size: .93rem; padding: 12px 15px; outline: none; transition: border-color .25s, box-shadow .25s; width: 100%; -webkit-appearance: none; }
+    .form-field select option { background: var(--dark); }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #444; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,149,42,.1); }
+    .form-field textarea { resize: vertical; min-height: 115px; }
+    .form-submit { padding: 15px 30px; font-size: 1rem; width: 100%; justify-content: center; margin-top: 4px; }
+    .form-success { display: none; padding: 28px; border: 1px solid var(--gold); border-radius: 2px; background: rgba(201,149,42,.07); text-align: center; }
+    .form-success svg { width: 42px; height: 42px; stroke: var(--gold); fill: none; stroke-width: 1.6; margin: 0 auto 12px; display: block; }
+    .form-success h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 7px; }
+    .form-success p { font-size: .88rem; color: var(--muted); }
+    .contact-info { display: flex; flex-direction: column; gap: 10px; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; padding: 20px; border: 1px solid var(--border); border-radius: 2px; background: var(--card); }
+    .contact-info-item svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.8; flex-shrink: 0; margin-top: 2px; }
+    .contact-info-item h4 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .contact-info-item p { font-size: .92rem; color: var(--white); line-height: 1.55; }
+    .contact-info-item a { color: var(--gold); transition: opacity .2s; }
+    .contact-info-item a:hover { opacity: .8; }
+
+    /* ── FOOTER ── */
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 60px 0 0; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 52px; border-bottom: 1px solid var(--border); }
+    .footer-brand .logo-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .footer-brand p { font-size: .88rem; color: var(--muted); line-height: 1.75; max-width: 300px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 22px; }
+    .footer-social { width: 36px; height: 36px; border: 1.5px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: border-color .25s, color .25s; }
+    .footer-social:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-social svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .footer-col h4 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: .86rem; color: var(--muted); transition: color .25s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: .78rem; color: #555; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: var(--gold); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float { position: fixed; bottom: 108px; right: 28px; z-index: 998; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 22px rgba(37,211,102,.45); transition: transform .3s; }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 30px; height: 30px; fill: white; }
+    .wa-pulse { position: absolute; inset: -4px; border-radius: 50%; border: 2px solid #25D366; animation: wapulse 2.2s infinite; }
+    @keyframes wapulse { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.55); } }
+
+    /* ── CHAT ── */
+    .chat-launcher { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 62px; height: 62px; background: linear-gradient(135deg, var(--gold), #8B6B1F); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 26px rgba(201,149,42,.55); cursor: pointer; transition: transform .3s, box-shadow .3s; border: none; padding: 0; overflow: hidden; }
+    .chat-launcher:hover { transform: scale(1.08); box-shadow: 0 6px 34px rgba(201,149,42,.65); }
+    .chat-launcher img { width: 26px; height: 26px; fill: var(--black); transition: opacity .2s; }
+    .chat-notif { position: absolute; top: -3px; right: -3px; width: 18px; height: 18px; background: #22c55e; border-radius: 50%; border: 2px solid var(--black); font-size: .6rem; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .chatbox { position: fixed; bottom: 96px; right: 28px; z-index: 998; width: 360px; background: var(--dark); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.6); display: flex; flex-direction: column; opacity: 0; pointer-events: none; transform: translateY(16px) scale(.97); transition: opacity .3s, transform .3s; overflow: hidden; max-height: 560px; }
+    .chatbox.open { opacity: 1; pointer-events: all; transform: none; }
+    .chat-header { background: linear-gradient(135deg, #1a1200, #2a1e00); padding: 16px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(201,149,42,.2); }
+    .chat-av-wrap { position: relative; flex-shrink: 0; }
+    .chat-avatar-img { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); object-fit: cover; background: #fff; }
+    .chat-status-dot { position: absolute; bottom: 1px; right: 1px; width: 10px; height: 10px; background: #22c55e; border-radius: 50%; border: 2px solid #1a1200; }
+    .chat-header-info h4 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .95rem; letter-spacing: .04em; color: var(--white); }
+    .chat-header-info p { font-size: .72rem; color: rgba(201,149,42,.8); margin-top: 1px; }
+    .chat-close { margin-left: auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,.08); color: var(--muted); transition: background .2s; }
+    .chat-close:hover { background: rgba(255,255,255,.15); color: var(--white); }
+    .chat-close svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .chat-msgs { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 280px; max-height: 360px; }
+    .chat-msgs::-webkit-scrollbar { width: 3px; }
+    .chat-msgs::-webkit-scrollbar-thumb { background: var(--border); }
+    .msg { max-width: 82%; padding: 10px 13px; border-radius: 10px; font-size: .87rem; line-height: 1.55; animation: msgIn .25s var(--ease); }
+    @keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .msg.bot { background: var(--card); color: var(--light); border-bottom-left-radius: 2px; align-self: flex-start; border: 1px solid var(--border); }
+    .msg.user { background: var(--gold); color: var(--black); border-bottom-right-radius: 2px; align-self: flex-end; font-weight: 500; }
+    .msg em { font-style: normal; color: var(--gold); font-weight: 600; }
+    .msg.user em { color: var(--black); }
+    .typing { align-self: flex-start; display: flex; gap: 4px; align-items: center; padding: 12px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; border-bottom-left-radius: 2px; }
+    .typing span { width: 6px; height: 6px; background: var(--muted); border-radius: 50%; animation: dot 1.3s infinite; }
+    .typing span:nth-child(2) { animation-delay: .2s; }
+    .typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes dot { 0%,80%,100% { opacity: .3; transform: scale(.8); } 40% { opacity: 1; transform: scale(1); } }
+    .quick-replies { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px; }
+    .quick-btn { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: .75rem; letter-spacing: .04em; padding: 6px 12px; border: 1.5px solid var(--gold); border-radius: 20px; color: var(--gold); background: rgba(201,149,42,.07); transition: all .2s; }
+    .quick-btn:hover { background: var(--gold); color: var(--black); }
+    .chat-input-row { display: flex; gap: 0; border-top: 1px solid var(--border); }
+    .chat-input-row input { flex: 1; background: #0f0f0f; border: none; padding: 13px 16px; color: #fff; font-family: 'Barlow', sans-serif; font-size: .94rem; outline: none; }
+    .chat-input-row input::placeholder { color: rgba(255,255,255,.4); }
+    .chat-send { padding: 13px 18px; background: var(--gold); color: var(--black); transition: background .2s; display: flex; align-items: center; justify-content: center; }
+    .chat-send:hover { background: var(--gold2); }
+    .chat-send svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-inner, .contact-inner, .whyus-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-badge { bottom: -10px; right: -10px; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .project-card.large { grid-column: span 1; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; gap: 20px 0; }
+      .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 16px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .coverage-inner { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .chatbox { width: calc(100vw - 32px); right: 16px; bottom: 88px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">CC</div>
+      <span>CrownLine Construction</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:4376019718" class="btn btn-gold btn-sm nav-cta">Call Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" data-ml>Services</a>
+  <a href="#about" data-ml>About</a>
+  <a href="#projects" data-ml>Projects</a>
+  <a href="#testimonials" data-ml>Reviews</a>
+  <a href="#contact" data-ml>Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1600&q=80')"></div>
+  </div>
+  <div class="slide-dots">
+    <button class="slide-dot active" data-dot="0"></button>
+    <button class="slide-dot" data-dot="1"></button>
+    <button class="slide-dot" data-dot="2"></button>
+  </div>
+  <div class="hero-content container">
+    <div class="hero-eyebrow"><span class="line"></span>CROWNLINE CONSTRUCTION · Toronto &amp; GTA</div>
+    <h1 class="hero-heading">Protect Your<br><span class="accent">Foundation &amp;<br>Future</span></h1>
+    <p class="hero-desc">Don't wait for basement leaks or foundation cracks to get worse. We provide engineered underpinning, exterior/interior waterproofing, and professional demolition across the GTA.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/14376019718" class="btn btn-gold">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 11-7.6-7.6 8.38 8.38 0 013.8.9h.5a3.5 3.5 0 110 7h-.5a8.48 8.48 0 01-8-8"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="#projects" class="btn btn-outline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        View Our Work
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num" data-count="150">0+</div><div class="hero-stat-label">Projects Completed</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="10">0+</div><div class="hero-stat-label">Years Experience</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="5">0</div><div class="hero-stat-label">Counties Covered</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="100">0+</div><div class="hero-stat-label">Happy Clients</div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span>Scroll</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head reveal">
+      <div class="section-badge"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>What We Do</div>
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-sub">Professional, reliable, quality workmanship across all aspects of building work.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" style="transition-delay:.05s">
+        <span class="service-num">01</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Underpinning &amp; Lowering</h3>
+        <p>Engineered basement lowering designed to increase ceiling height while strengthening your foundation. Fully engineer-approved, inspected, and insured.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.1s">
+        <span class="service-num">02</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Exterior Waterproofing</h3>
+        <p>Full foundation protection using Delta-MS membranes and proper drainage stones to prevent leaks before they start and control moisture long-term.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.15s">
+        <span class="service-num">03</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 14l8-8 8 8M12 6v12"/></svg></div>
+        <h3>Interior Waterproofing</h3>
+        <p>Full interior systems installed to stop water entering the foundation. Ideal for homes with damp walls, musty smells, or active basement leaks.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.2s">
+        <span class="service-num">04</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg></div>
+        <h3>Concrete &amp; Upgrades</h3>
+        <p>Front porches, steps, walkways, and custom aluminum railings. Designed for durability, safety, and a premium clean finish for your home's exterior.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.25s">
+        <span class="service-num">05</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+        <h3>Demolition Services</h3>
+        <p>Safe and efficient demolition for residential and commercial projects. We handle everything from wall removal to full site clearance.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.3s">
+        <span class="service-num">06</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h3>Foundation Repair</h3>
+        <p>Professional crack repair, weeping tile systems, and sump pump installations to address dampness and protect structural integrity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img-wrap reveal-left">
+        <div class="about-accent"></div>
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="CrownLine Construction team on site" class="about-img" loading="lazy" />
+        <div class="about-badge"><div class="num">★★★★★</div><div class="txt">5-Star<br>Rated</div></div>
+      </div>
+      <div class="about-text reveal-right">
+        <div class="section-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Our Story</div>
+        <h2 class="section-title">Reliable,<br><span>Professional</span><br>Execution</h2>
+        <p>CrownLine Construction is built on a foundation of trust and quality. We specialize in underpinning, waterproofing, and demolition work across Toronto and the GTA. We bring a manual, hands-on approach to every structural project we undertake.</p>
+        <p>Covering Toronto and the Greater Toronto Area, our team delivers professional, reliable construction work with the kind of care and communication that ensures your home's foundation is built to last.</p>
+        <div class="about-vals">
+          <div class="about-val">
+            <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+            <div><h4>Locally Based</h4><p>Serving Toronto, the GTA, and surrounding communities</p></div>
+          </div>
+          <div class="about-val">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><h4>Daily Updates</h4><p>Photos &amp; progress reports throughout every project</p></div>
+          </div>
+          <div class="about-val">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div><h4>Structural Experts</h4><p>Licensed, insured, and engineer-approved</p></div>
+          </div>
+          <div class="about-val">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+            <div><h4>Free Quotes</h4><p>Transparent pricing, no hidden surprises</p></div>
+          </div>
+        </div>
+        <a href="tel:4376019718" class="btn btn-gold" style="margin-top:10px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.81 12.81 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l2.27-2.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call For A Free Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="projects-head">
+      <div>
+        <div class="section-badge reveal"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Our Work</div>
+        <h2 class="section-title reveal">Recent <span>Projects</span></h2>
+      </div>
+      <div class="projects-filter reveal">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Underpinning</button>
+        <button class="filter-btn">Waterproofing</button>
+        <button class="filter-btn">Demolition</button>
+        <button class="filter-btn">Foundations</button>
+      </div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card large reveal">
+        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=900&q=80" alt="Underpinning and basement lowering project" loading="lazy" />
+        <div class="project-overlay">
+          <h3>Lowering & Underpinning</h3>
+          <span>Underpinning · Toronto</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:.1s">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Exterior waterproofing membrane installation" loading="lazy" />
+        <div class="project-overlay">
+          <h3>Exterior Protection</h3>
+          <span>Waterproofing · GTA</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:.15s">
+        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" alt="Structural demolition project" loading="lazy" />
+        <div class="project-overlay">
+          <h3>Structural Demolition</h3>
+          <span>Demolition · Scarborough</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="Concrete front porch and steps" loading="lazy" />
+        <div class="project-overlay">
+          <h3>Concrete Porch & Steps</h3>
+          <span>Upgrades · Etobicoke</span>
+        </div>
+      </div>
+      <div class="project-card large reveal" style="transition-delay:.25s">
+        <img src="https://images.unsplash.com/photo-1590069230002-749d887474a6?w=900&q=80" alt="Foundation crack repair and reinforcement" loading="lazy" />
+        <div class="project-overlay">
+          <h3>Foundation Reinforcement</h3>
+          <span>Structural · North York</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE BANNER -->
+<div class="coverage">
+  <div class="container">
+    <div class="coverage-inner">
+      <div class="coverage-text">
+        <h2>We Cover the GTA</h2>
+        <p>📍 Proudly serving Toronto and the surrounding Greater Toronto Area</p>
+      </div>
+      <div class="coverage-areas">
+        <span class="coverage-area">Toronto</span>
+        <span class="coverage-area">North York</span>
+        <span class="coverage-area">Scarborough</span>
+        <span class="coverage-area">Etobicoke</span>
+        <span class="coverage-area">Vaughan</span>
+        <span class="coverage-area">Mississauga</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="whyus" id="why-us">
+  <div class="container">
+    <div class="whyus-inner">
+      <div class="reveal-left">
+        <div class="section-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Why Choose Us</div>
+        <h2 class="section-title" style="margin-bottom:16px">Why Clients<br><span>Choose</span> CrownLine</h2>
+        <p class="section-sub">We don't just build structures — we build trust. Here's what makes us different.</p>
+        <div style="margin-top:32px;padding:28px;border:1px solid rgba(206, 139, 6, 0.3);border-radius:4px;background:rgba(201,149,42,.05);">
+          <div style="font-size:2rem;margin-bottom:8px;">★★★★★</div>
+          <p style="font-size:.92rem;color:var(--light);font-style:italic;line-height:1.75">"Professional, reliable, quality workmanship — exactly what you want from a construction company. The team goes above and beyond every time."</p>
+          <p style="font-size:.78rem;color:var(--gold);margin-top:12px;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.06em;">— VERIFIED CLIENT REVIEW</p>
+        </div>
+      </div>
+      <div class="whyus-right reveal-right">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div class="why-body"><h3>Basement Experts</h3><p>Specializing in underpinning and waterproofing, we ensure your home's foundation is solid and dry.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div class="why-body"><h3>Transparent Communication</h3><p>No surprises. We discuss everything openly before, during and after the build — honesty is at our core.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div class="why-body"><h3>Quality & Safety</h3><p>Every structural project is handled with extreme care and precision, prioritizing your home's long-term safety.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div class="why-body"><h3>Hands-On Execution</h3><p>Our team is personally involved in every step of the project, from demolition to the final concrete pour.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">05</div>
+          <div class="why-body"><h3>Free Consultations</h3><p>Call us today for a free, no-obligation assessment of your construction needs — no pressure, just experts.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="testimonials-head reveal">
+      <div class="section-badge"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Client Reviews</div>
+      <h2 class="section-title">What Clients <span>Say</span></h2>
+      <p class="section-sub">Don't take our word for it — hear from the people we've worked with.</p>
+    </div>
+    <div class="testi-slider reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The team has gone above and beyond in everything we have asked of them. Their <strong>openness and communication</strong>, with daily updates and photographs showing progress on site, gave everyone a great deal of <strong>confidence</strong>. Their professionalism, reliability, and hands-on approach make them a <strong>trusted part of our project delivery</strong> going forward.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">GC</div>
+            <div>
+              <div class="testi-name">Gail Cooke</div>
+              <div class="testi-role">Lexham Mews</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Absolutely <strong>fantastic job</strong> on our kitchen and extension. Neal and the team were on time every day, kept everything incredibly <strong>clean and tidy</strong>, and the finish is outstanding. I wouldn't hesitate to recommend FS Construction to anyone looking for <strong>quality building work</strong>.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JM</div>
+            <div>
+              <div class="testi-name">James Mitchell</div>
+              <div class="testi-role">Hertfordshire</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">We had our bathroom completely renovated and the result is <strong>incredible</strong>. From the initial quote to the final walkthrough, FS Construction were <strong>professional at every stage</strong>. The tiling work in particular is of a standard we've rarely seen. Will definitely be using them again for our upcoming extension.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <div class="testi-name">Sarah Reynolds</div>
+              <div class="testi-role">Greater London</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-nav">
+      <button id="testiPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button id="testiNext" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-badge" style="display:inline-flex"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>How It Works</div>
+      <h2 class="section-title">Our <span>Process</span></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal" style="transition-delay:.05s">
+        <div class="process-step-num">01</div>
+        <h3>Contact Us</h3>
+        <p>Email us or use our contact form. Tell us about your project — we'll get back to you quickly.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.1s">
+        <div class="process-step-num">02</div>
+        <h3>Free Quote</h3>
+        <p>We visit the site, assess the work needed, and provide a clear, transparent quote at no cost to you.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.15s">
+        <div class="process-step-num">03</div>
+        <h3>We Build</h3>
+        <p>Our team gets to work, with daily photo updates and open communication throughout the entire project.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.2s">
+        <div class="process-step-num">04</div>
+        <h3>Final Handover</h3>
+        <p>We walk through the finished work together and won't rest until you're completely satisfied.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <div class="section-badge reveal"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Get In Touch</div>
+        <h2 class="section-title reveal">Start Your<br><span>Project</span> Today</h2>
+        <p class="section-sub reveal" style="margin-bottom:32px">Are you noticing water in your basement, foundation cracks, or a musty smell? Message us today for a FREE estimate on your waterproofing or foundation project.</p>
+        <div class="contact-info">
+          <div class="contact-info-item reveal" style="transition-delay:.05s">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.81 12.81 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l2.27-2.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <div><h4>Call Us</h4><p><a href="tel:4376019718">437-601-9718</a></p></div>
+          </div>
+          <div class="contact-info-item reveal" style="transition-delay:.1s">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><h4>Service Area</h4><p>Toronto, GTA<br>and surrounding areas</p></div>
+          </div>
+          <div class="contact-info-item reveal" style="transition-delay:.15s">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div><h4>Response Time</h4><p>We aim to reply within 2 hours<br>Mon–Sat</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" placeholder="John" required />
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-field">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Underpinning/Lowering</option>
+              <option>Exterior Waterproofing</option>
+              <option>Interior Waterproofing</option>
+              <option>Concrete &amp; Steps</option>
+              <option>Demolition</option>
+              <option>Foundation Repair</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Tell Us About Your Project</label>
+            <textarea placeholder="Describe your project, rough size, timeline, etc..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold form-submit">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Message Sent!</h3>
+          <p>Thanks for getting in touch. We'll be in touch within 24 hours with your free quote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="assets/crownlogo.jpg" alt="CrownLine Logo" style="height: 48px; width: auto; border-radius: 2px;">
+        </div>
+        <p>CrownLine Construction — your trusted experts for underpinning, waterproofing, and demolition services across Toronto and the GTA.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/crownlineconstructionn" target="_blank" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/14376019718" target="_blank" class="footer-social" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="mailto:constructioncrownline@gmail.com" class="footer-social" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Underpinning / Lowering</a></li>
+          <li><a href="#services">Exterior Waterproofing</a></li>
+          <li><a href="#services">Interior Waterproofing</a></li>
+          <li><a href="#services">Concrete &amp; Steps</a></li>
+          <li><a href="#services">Demolition</a></li>
+          <li><a href="#services">Foundation Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#why-us">Why Choose Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:4376019718">437-601-9718</a></li>
+          <li><a href="mailto:constructioncrownline@gmail.com">constructioncrownline@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CrownLine Construction. All rights reserved.</p>
+      <p>Professional · Reliable · Quality Workmanship</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/14376019718?text=Hi%20CrownLine%20Construction!%20I'd%20like%20a%20free%20quote." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- CHAT LAUNCHER -->
+<button class="chat-launcher" id="chatLauncher" onclick="toggleChat()" aria-label="Chat with Sophia">
+  <div class="chat-notif">1</div>
+  <div id="chatIconOpen" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+    <img src="assets/avatar.png" alt="Sophia" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+  <svg id="chatIconClose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none; width: 26px; height: 26px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<!-- CHATBOX -->
+<div class="chatbox" id="chatbox">
+  <div class="chat-header">
+    <div class="chat-avatar-wrap">
+      <img src="assets/avatar.png" alt="Sophia" class="chat-avatar-img">
+      <div class="chat-status-dot"></div>
+    </div>
+    <div class="chat-header-info">
+      <h4>Sophia · CrownLine Construction</h4>
+      <p>🟢 Online · Replies in minutes</p>
+    </div>
+    <button class="chat-close" onclick="toggleChat()" aria-label="Close chat">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div id="quickReplies" class="quick-replies"></div>
+  <div class="chat-input-row">
+    <input type="text" id="chat-input" placeholder="Type your message…" onkeydown="if(event.key==='Enter')sendMsg()" />
+    <button class="chat-send" onclick="sendMsg()" aria-label="Send">
+      <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   FS Construction — AI Assistant v1
+   Conversational, personalised, humanised chatbot
+   Flow: greet → ask name → FAQ/unknown → lead → WhatsApp
+   ═══════════════════════════════════════════════════════════════ */
+
+const OWNER_WHATSAPP = "14376019718";
+
+const RESPONSES = [
+  {
+    id: "services",
+    tags: ["services","what do you do","what do you offer","offer","building work","work you do","specialise","specialize","type of work","kind of work","can you do","what can"],
+    answers: [
+      "Great question! CrownLine Construction specializes in *underpinning & basement lowering*, *exterior & interior waterproofing*, *concrete & steps*, and professional *demolition*. We're experts at protecting and strengthening foundations. Is there a specific service you're looking for?",
+      "We handle everything from foundational work like *underpinning* to complete *waterproofing* systems (interior and exterior). We also do concrete porches, steps, and demolition. What's the project you have in mind?"
+    ]
+  },
+  {
+    id: "underpinning",
+    tags: ["underpinning","foundation","stabilize","strengthen","structural","basement lowering","ceiling height","increase height"],
+    answers: [
+      "Engineered basement lowering is one of our strengths! We can *increase your ceiling height* and strengthen your home's foundation. All our work is *engineer-approved*, inspected, and insured. Want me to set up a consultation?",
+      "Absolutely — we specialize in underpinning and basement lowering. It's the best way to add usable space and value to your home while reinforcing the structure. Would you like to know more about the process?"
+    ]
+  },
+  {
+    id: "waterproofing",
+    tags: ["waterproofing","wet basement","leaks","water damage","sealing","interior","exterior","musty","smell","damp"],
+    answers: [
+      "We provide both *interior* and *exterior* waterproofing. Exterior waterproofing uses Delta-MS membranes to stop leaks before they start, while interior systems control moisture and active leaks. Are you noticing damp walls or water during rain?",
+      "We're experts in keeping Toronto basements dry! Depending on your home, we'll recommend either a full exterior foundation wrap or an interior drainage system. Shall I connect you with the team for a free inspection?"
+    ]
+  },
+  {
+    id: "demolition",
+    tags: ["demolition","demo","tear down","remove wall","clearance","wrecking"],
+    answers: [
+      "Safe and efficient demolition is key. Whether it's removing internal walls or a full structural tear-down, we handle the job and the site clearance with precision. What's the scope of your demolition project?",
+      "We provide safe, professional demolition services for residential and commercial sites. Minimal disruption and full debris removal. Want a quote for a demo job?"
+    ]
+  },
+  {
+    id: "concrete",
+    tags: ["concrete","porch","steps","walkway","walkways","railings","finish","curb appeal"],
+    answers: [
+      "Concrete work can massively improve your home's curb appeal! We do *front porches*, *steps*, *walkways*, and even install *custom aluminum railings*. Our work is built for durability and looks clean. Thinking of an exterior upgrade?",
+      "We design and build durable concrete steps, walkways, and porches. We match it with proper base prep and custom railings for safety and style. Want to see some recent project photos?"
+    ]
+  },
+  {
+    id: "foundation_repair",
+    tags: ["crack","cracks","repair","foundation repair","leaking crack","weeping tile","sump pump"],
+    answers: [
+      "Noticing cracks in your foundation? We provide professional *crack repair*, *weeping tile* maintenance, and *sump pump* installations. Addressing these now prevents massive damage later. Want a free estimate?",
+      "Foundation integrity is critical. We handle structural repairs, crack sealing, and drainage improvements to keep your home safe and dry. Shall I get the team to call you?"
+    ]
+  },
+  {
+    id: "quote",
+    tags: ["quote","cost","price","how much","estimate","pricing","rates","charge","free quote","get a quote"],
+    answers: [
+      "Getting a quote is completely free and there's absolutely no obligation! All our work is tailored to your specific needs and budget.",
+      "All our quotes are *completely free* — no catch, no pressure. We aim to provide clear, honest pricing for every project we undertake."
+    ]
+  },
+  {
+    id: "coverage",
+    tags: ["where","area","cover","location","based","near me","come to","travel","toronto","gta","north york","scarborough","etobicoke","vaughan","mississauga","brampton","york","richmond hill","markham"],
+    answers: [
+      "We cover *Toronto* and the entire *GTA*, including North York, Scarborough, Etobicoke, Vaughan, and Mississauga. Basically, if you're in the Greater Toronto Area, we've got you covered! Whereabouts are you based?",
+      "Our coverage area is *Toronto & the GTA*. We know the local building codes and soil conditions well. Are you in the city or the outskirts?"
+    ]
+  },
+  {
+    id: "timeline",
+    tags: ["how long","timeline","start","when can","available","busy","schedule","wait","timeframe","begin","how soon"],
+    answers: [
+      "Timelines depend on the job — an interior waterproofing project might take *a few days*, while a full underpinning or basement lowering project can take *several weeks*. We'd give you a clear schedule during your consultation. Want to get that booked?",
+      "Interior systems and crack repairs move fairly quickly, while exterior excavation and underpinning focus on long-term structural integrity. Want a more specific timeline for your project?"
+    ]
+  },
+  {
+    id: "process",
+    tags: ["process","how does","how it works","what happens","steps","procedure","planning","start","begin project"],
+    answers: [
+      "Our process is really straightforward: *1)* consultation. *2)* free quote. *3)* schedule start date. *4)* build with daily updates. *5)* walkthrough and handover. Simple, transparent, no stress.",
+      "It's a simple process — free consultation and quote, then we get to work with *daily photo updates* so you always know what's happening. We don't move on until you're 100% happy with the result."
+    ]
+  },
+  {
+    id: "trust",
+    tags: ["trusted","reliable","trustworthy","guarantee","warranty","insured","accredited","qualified","experience","reviews","testimonials","references","past work","previous work"],
+    answers: [
+      "Trust is everything in foundations! CrownLine Construction is a professional team with structural expertise. We provide *regular updates*, have great reviews, and are fully insured for your peace of mind in Toronto. Would you like to see some of our previous foundations work?",
+      "We're completely transparent throughout the process. Our work is built to last, and we don't consider a job done until the client is 100% satisfied. What's the biggest concern you have with your project?"
+    ]
+  },
+  {
+    id: "contact",
+    tags: ["contact","email","get in touch","reach","phone","number","call","speak","talk","message","whatsapp"],
+    answers: [
+      "The best way to reach us is by phone: *437-601-9718* — or you can WhatsApp us directly. Alternatively, leave your details here and I'll have the team call you back! What works best?",
+      "You can call us at *437-601-9718* for a free quote, or I can forward your details to the team on WhatsApp right now. What's easiest for you?"
+    ]
+  },
+  {
+    id: "greeting",
+    tags: ["hi","hello","hey","good morning","good afternoon","good evening","morning","afternoon","evening","howdy","hiya","greetings","sup","yo"],
+    answers: ["__greeting__"]
+  },
+  {
+    id: "thanks",
+    tags: ["thank","thanks","thank you","ty","thx","appreciate","grateful","cheers","helpful","that helped","awesome help"],
+    answers: [
+      "You're very welcome, {name}! 😊 Is there anything else I can help you with?",
+      "Happy to help, {name}! That's exactly what I'm here for. Got any other questions?",
+      "Of course, {name}! Feel free to ask anything else — no question is too small. 😊"
+    ]
+  },
+  {
+    id: "farewell",
+    tags: ["bye","goodbye","see you","take care","later","cya","good night","goodnight","that's all","no more questions","done","finished"],
+    answers: [
+      "Take care, {name}! 👋 If you ever need anything — a quote, advice, or just a question — we're right here. Have a great day!",
+      "Bye for now, {name}! It was great chatting. Don't hesitate to come back if anything comes up. 😊",
+      "Goodbye, {name}! Remember — we offer free quotes with no obligation. Whenever you're ready, we're here! 🏠"
+    ]
+  },
+  {
+    id: "identity",
+    tags: ["who are you","what are you","are you a bot","are you ai","are you human","are you real","are you automated","is this a bot","your name","tell me about yourself","introduce yourself"],
+    answers: [
+      "I'm *Sophia*, the CrownLine Construction assistant! I'm here to help you with questions about our foundation, waterproofing, and demolition services. Think of me as your first point of contact! What can I help you with?",
+      "I'm *Sophia* — CrownLine's intelligent assistant. I'm designed to give you quick, structural answers and connect you with the right experts. How can I assist with your project today?"
+    ]
+  },
+  {
+    id: "compliment",
+    tags: ["great","amazing","awesome","excellent","fantastic","wonderful","love it","helpful","brilliant","nice","well done","impressive","smart","good"],
+    answers: [
+      "Thank you, {name}! 😊 That's really kind. Anything else I can help with?",
+      "Aw, that made my day! I try my best, {name}. Got any more questions?"
+    ]
+  },
+  {
+    id: "confirm",
+    tags: ["yes","yeah","yep","sure","ok","okay","sounds good","alright","definitely","absolutely","please","go ahead","let's do it","connect me","take my details","contact me","reach out","help me","immediately","forward my info","do that"],
+    answers: ["__confirm__"]
+  },
+  {
+    id: "negative",
+    tags: ["no","nope","nah","not now","maybe later","no thanks","nevermind","never mind","no need","i'm fine","i'm good"],
+    answers: [
+      "No problem at all! 😊 The offer stands whenever you're ready. Is there anything else I can help with?",
+      "Totally fine! We're here whenever you need us. Anything else on your mind?"
+    ]
+  }
+];
+
+/* ─── State ─────────────────────────────────────────────────── */
+const state = {
+  stage: 'pre_name',   // pre_name → chatting → ask_phone → ask_service → done
+  userName: '',
+  userPhone: '',
+  userProblem: '',
+  fallbackCount: 0,
+  lastMatchId: null
+};
+
+/* ─── Helpers ────────────────────────────────────────────────── */
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function personalize(text) {
+  const first = state.userName ? state.userName.split(' ')[0] : '';
+  return text.replace(/{name}/g, first ? `, ${first}` : '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+function matchIntent(input) {
+  const lower = input.toLowerCase().trim();
+  let best = null, bestScore = 0;
+  for (const resp of RESPONSES) {
+    for (const tag of resp.tags) {
+      if (lower.includes(tag)) {
+        const score = tag.length;
+        if (score > bestScore) { bestScore = score; best = resp; }
+      }
+    }
+  }
+  return bestScore > 1 ? best : null;
+}
+
+function wantsHuman(text) {
+  const t = text.toLowerCase();
+  return ['speak to','talk to','human','real person','someone','call me','ring me','call us','speak with','connect me to','put me through'].some(k => t.includes(k));
+}
+
+/* ─── UI ─────────────────────────────────────────────────────── */
+function appendMsg(text, role) {
+  const msgs = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.innerHTML = role === 'bot' ? personalize(text).replace(/\*([^*]+)\*/g, '<em>$1</em>') : escapeHTML(text);
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function escapeHTML(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function showTyping() {
+  const msgs = document.getElementById('chatMsgs');
+  const t = document.createElement('div');
+  t.className = 'typing'; t.id = 'typingIndicator';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  const t = document.getElementById('typingIndicator');
+  if (t) t.remove();
+}
+
+function botReply(text, delay = 0) {
+  const d = delay || (700 + Math.random() * 500);
+  showTyping();
+  setTimeout(() => {
+    hideTyping();
+    appendMsg(text, 'bot');
+  }, d);
+}
+
+function setQuick(btns) {
+  const qr = document.getElementById('quickReplies');
+  qr.innerHTML = '';
+  btns.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'quick-btn';
+    btn.textContent = b.label;
+    btn.onclick = () => quickAsk(b.value);
+    qr.appendChild(btn);
+  });
+}
+
+/* ─── Lead / WhatsApp ─────────────────────────────────────────── */
+function startLeadFlow() {
+  if (!state.userName) {
+    state.stage = 'collect_name';
+    botReply(`I'll get the team to reach out to you right away! 🙌\n\nFirst, what's your *full name*?`, 800);
+  } else {
+    state.stage = 'ask_phone';
+    botReply(`Got it! And what's the best *phone number* for the team to reach you on? 📞`, 800);
+  }
+}
+
+function sendToWhatsApp() {
+  const msg = `Hi, my name is ${state.userName} and I'm interested in ${state.userProblem}. My phone number is ${state.userPhone}. Looking forward to hearing from you!`;
+  const url = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+/* ─── Main handler ───────────────────────────────────────────── */
+function handleUserInput(raw) {
+  const text = raw.trim();
+  if (!text) return;
+  appendMsg(text, 'user');
+  setQuick([]);
+
+  /* Stage: waiting for their name at start */
+  if (state.stage === 'pre_name') {
+    const cleaned = text.replace(/^(i am|i'm|my name is|it's|it is|this is|call me|hello|hi|hey|greetings)\s+/i, '').trim();
+    if (cleaned.length < 2 || ['hi','hello','hey','yo','sup'].includes(cleaned.toLowerCase())) {
+      botReply(`I didn't quite catch your name — what should I call you? 😊`, 800);
+      return;
+    }
+    state.userName = cleaned;
+    state.stage = 'chatting';
+    const first = state.userName.split(' ')[0];
+    botReply(`Lovely to meet you, *${first}*! 🏗️ What kind of project or *services are you seeking* today? (e.g. Underpinning, Waterproofing, Demolition...)`, 900);
+    setTimeout(() => setQuick([
+      { label: '💰 Get a Free Quote', value: 'How do I get a free quote?' },
+      { label: '🏗️ Underpinning', value: 'Tell me about underpinning' },
+      { label: '🛡️ Waterproofing', value: 'Tell me about waterproofing' },
+      { label: '📍 Coverage Areas', value: 'What areas do you cover?' }
+    ]), 2000);
+    return;
+  }
+
+  /* Stage: collecting name for lead */
+  if (state.stage === 'collect_name') {
+    if (text.length < 2) { botReply("Could you share your name so the team knows who to reach out to? 😊"); return; }
+    state.userName = text;
+    state.stage = 'ask_phone';
+    const first = text.split(' ')[0];
+    botReply(`Great, nice to meet you *${first}*! 😊\n\nAnd what's the best *phone number* for the team to reach you on? 📞`, 900);
+    return;
+  }
+
+  /* Stage: collecting phone */
+  if (state.stage === 'ask_phone') {
+    state.userPhone = text;
+    if (state.userProblem) {
+      state.stage = 'done';
+      botReply(`Perfect! 🎉 Redirecting you to the team on WhatsApp now...`, 800);
+      setTimeout(() => {
+        sendToWhatsApp();
+        setTimeout(() => appendMsg(`✅ *Done!* Your message is with the team. We will be in touch shortly!`, 'bot'), 1500);
+      }, 2000);
+    } else {
+      state.stage = 'ask_service';
+      botReply(`Got it! 👍\n\nAnd what *service* are you interested in? (e.g. underpinning, waterproofing, demolition...)`, 800);
+    }
+    return;
+  }
+
+  /* Stage: collecting service */
+  if (state.stage === 'ask_service') {
+    state.userProblem = text;
+    state.stage = 'done';
+    botReply(`Perfect! 🎉 Redirecting you to the team on WhatsApp now...`, 800);
+    setTimeout(() => {
+      sendToWhatsApp();
+      setTimeout(() => appendMsg(`✅ *Done!* Your message is with the team. We will be in touch shortly!`, 'bot'), 1500);
+    }, 2000);
+    return;
+  }
+
+  /* Stage: done */
+  if (state.stage === 'done') {
+    botReply(`You're all set! 😊 The team has your message. We will be in touch on your phone shortly. Is there anything else?`);
+    return;
+  }
+
+  /* Wants human */
+  if (wantsHuman(text)) {
+    startLeadFlow(`Of course! Let me get you connected with the team right now. 🙌\n\nFirst — could you briefly describe *what you're looking to have done*?`);
+    return;
+  }
+
+  /* Intent match */
+  const match = matchIntent(text);
+  if (match) {
+    state.fallbackCount = 0;
+    state.lastMatchId = match.id;
+
+    if (match.id === 'greeting') {
+      // Already got name — just be friendly
+      const first = state.userName ? state.userName.split(' ')[0] : '';
+      botReply(first ? `Hey ${first}! 😊 Great to hear from you. What can I help you with?` : `Hey! 😊 What can I help you with today?`);
+      return;
+    }
+
+    if (match.id === 'confirm') {
+      const services = ['quote','contact','underpinning','waterproofing','demolition','concrete','foundation_repair','process'];
+      if (services.includes(state.lastMatchId)) {
+        const contextService = (state.lastMatchId !== 'quote' && state.lastMatchId !== 'contact' && state.lastMatchId !== 'process') ? state.lastMatchId.replace('_',' ') : '';
+        if (contextService) state.userProblem = contextService;
+        startLeadFlow();
+      } else {
+        botReply(`Great! 💪 How can I help you further?`);
+      }
+      return;
+    }
+
+    const answer = pick(match.answers);
+    botReply(answer);
+
+    // High-Intent Auto-Trigger (100x Developer Optimization)
+    const highIntent = ['quote','contact','underpinning','waterproofing','demolition','concrete','foundation_repair'];
+    if (highIntent.includes(match.id)) {
+      if (match.id === 'quote') state.userProblem = 'a quote';
+      else if (match.id === 'contact') state.userProblem = 'contact the team';
+      else state.userProblem = match.id.replace('_',' ');
+      
+      // Delay slightly so they read the info first, then jump to collection
+      setTimeout(() => startLeadFlow(), 2000);
+    }
+
+    // Follow-up quick replies (only for low intent)
+    const followUps = [
+      { label: '💰 Get a Free Quote', value: 'I want a free quote' },
+      { label: '❓ Ask Something Else', value: 'I have another question' },
+      { label: '💬 Talk to the Team', value: 'I want to speak to someone' }
+    ];
+    if (!['greeting','farewell','thanks','compliment','negative','confirm','identity', ...highIntent].includes(match.id)) {
+      setTimeout(() => setQuick(followUps), 2400);
+    }
+    return;
+  }
+
+  /* No match — use AI-powered response then lead */
+  state.fallbackCount++;
+  if (state.fallbackCount === 1) {
+    const aiResponses = [
+      `That's an interesting one! Let me think... For anything like that, the best approach is really to connect you directly with the team — they'll be able to give you a proper, accurate answer rather than me guessing. Shall I do that?`,
+      `Good question! I want to make sure you get the most accurate answer on that, so rather than give you something generic, let me connect you with the team directly — they'll know exactly what to say. Want me to set that up?`,
+      `Hmm, that's a bit outside my area — I handle the core questions, but for something like that I'd rather get you in front of the right person. The team can give you a much better answer. Shall I connect you?`
+    ];
+    botReply(pick(aiResponses), 1200);
+    setTimeout(() => setQuick([
+      { label: '✅ Yes, connect me', value: 'Yes please connect me to the team' },
+      { label: '❓ Ask something else', value: 'I have another question' }
+    ]), 3000);
+  } else {
+    startLeadFlow(null);
+  }
+}
+
+/* ─── Public API ─────────────────────────────────────────────── */
+function sendMsg() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  handleUserInput(text);
+}
+
+function quickAsk(value) {
+  setQuick([]);
+  handleUserInput(value);
+}
+
+/* ─── Toggle ─────────────────────────────────────────────────── */
+let chatOpen = false, greeted = false;
+
+function toggleChat() {
+  const box = document.getElementById('chatbox');
+  const notif = document.querySelector('.chat-notif');
+  const iconOpen = document.getElementById('chatIconOpen');
+  const iconClose = document.getElementById('chatIconClose');
+  chatOpen = !chatOpen;
+  box.classList.toggle('open', chatOpen);
+  if (notif) notif.style.display = 'none';
+  iconOpen.style.display = chatOpen ? 'none' : '';
+  iconClose.style.display = chatOpen ? '' : 'none';
+
+  if (chatOpen && !greeted) {
+    greeted = true;
+    setTimeout(() => {
+      showTyping();
+      setTimeout(() => {
+        hideTyping();
+        appendMsg(`Hi there! 👋 I'm *Sophia*, the CrownLine Construction AI assistant. It's a pleasure to meet you!\n\nBefore we get started — *what's your name?*`, 'bot');
+      }, 900);
+    }, 350);
+  }
+}
+</script>
+
+<script>
+  /* ── NAV ── */
+  const navbar = document.getElementById('navbar');
+  const allNavLinks = document.querySelectorAll('.nav-links a');
+  const allSections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    let cur = '';
+    allSections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    allNavLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+  });
+
+  /* ── HAMBURGER ── */
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+    document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('[data-ml]').forEach(el => {
+    el.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); document.body.style.overflow = ''; });
+  });
+
+  /* ── HERO SLIDER ── */
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.slide-dot');
+  let curSlide = 0;
+  function goSlide(n) {
+    slides[curSlide].classList.remove('active'); dots[curSlide].classList.remove('active');
+    curSlide = (n + slides.length) % slides.length;
+    slides[curSlide].classList.add('active'); dots[curSlide].classList.add('active');
+  }
+  dots.forEach(d => d.addEventListener('click', () => goSlide(+d.dataset.dot)));
+  setInterval(() => goSlide(curSlide + 1), 5500);
+
+  /* ── COUNTER ── */
+  function animateCounter(el) {
+    const target = +el.dataset.count;
+    const duration = 2200;
+    const interval = Math.max(duration / target, 8);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + Math.ceil(target / (duration / interval)), target);
+      el.textContent = current + '+';
+      if (current >= target) clearInterval(timer);
+    }, interval);
+  }
+  const counterEls = document.querySelectorAll('[data-count]');
+  let counted = false;
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting && !counted) { counted = true; counterEls.forEach(animateCounter); } });
+  }, { threshold: .3 }).observe(document.querySelector('.hero-stats'));
+
+  /* ── SCROLL REVEAL ── */
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+  }, { threshold: .1, rootMargin: '0px 0px -36px 0px' });
+  reveals.forEach(el => revObs.observe(el));
+
+  /* ── TESTIMONIAL SLIDER ── */
+  const testiTrack = document.getElementById('testiTrack');
+  let testiIdx = 0;
+  const testiTotal = 3;
+  function goTesti(n) { testiIdx = (n + testiTotal) % testiTotal; testiTrack.style.transform = `translateX(-${testiIdx * 100}%)`; }
+  document.getElementById('testiNext').addEventListener('click', () => goTesti(testiIdx + 1));
+  document.getElementById('testiPrev').addEventListener('click', () => goTesti(testiIdx - 1));
+  setInterval(() => goTesti(testiIdx + 1), 7000);
+
+  /* ── PROJECT FILTER ── */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  /* ── CONTACT FORM ── */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.form-submit');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    setTimeout(() => { this.style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; }, 1400);
+  });
+</script>
+</body>
+</html>
